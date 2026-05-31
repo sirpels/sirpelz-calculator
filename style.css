@@ -1,0 +1,144 @@
+/*
+  Sirpelz Calculator styles
+  -------------------------
+  A compact dark calculator layout with clear buttons,
+  a focused display area, and responsive sizing for small screens.
+*/
+
+/* Reset browser defaults so the layout starts clean. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the calculator on the page. */
+body {
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Main calculator shell. */
+.calculator {
+  background-color: #1e1e2e;
+  border-radius: 24px;
+  padding: 24px;
+  width: 320px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Display area for the expression and current value. */
+.display {
+  background-color: #13131f;
+  border-radius: 16px;
+  padding: 20px 20px 14px;
+  margin-bottom: 20px;
+  text-align: right;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Small top line for the current expression. */
+#expression {
+  color: #5a5a7a;
+  font-size: 0.8rem;
+  min-height: 20px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Main number shown on the calculator screen. */
+#screen {
+  color: #ffffff;
+  font-size: 2.4rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Four-column button grid. */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Shared button style. */
+.btn {
+  border: none;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  height: 64px;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Number buttons. */
+.btn-number {
+  background-color: #2a2a40;
+  color: #ffffff;
+}
+
+/* Operator buttons. */
+.btn-operator {
+  background-color: #3b5bdb;
+  color: #ffffff;
+}
+
+/* Clear button. */
+.btn-clear {
+  background-color: #e03131;
+  color: #ffffff;
+}
+
+/* Equals button. */
+.btn-equals {
+  background-color: #4dabf7;
+  color: #121212;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Make the zero button wider, like a real calculator. */
+.btn-zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 22px;
+}
+
+/* Small-screen adjustments. */
+@media (max-width: 400px) {
+  .calculator {
+    width: 95vw;
+    padding: 18px;
+  }
+
+  .btn {
+    height: 56px;
+    font-size: 1rem;
+  }
+
+  #screen {
+    font-size: 2rem;
+  }
+}
